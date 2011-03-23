@@ -1,45 +1,46 @@
 = EdgeCase Ruby Koans
 
-The Ruby Koans walk you along the path to enlightenment in order to learn Ruby.
-The goal is to learn the Ruby language, syntax, structure, and some common
-functions and libraries. We also teach you culture. Testing is not just something we
-pay lip service to, but something we live.  It is essential in your quest to learn
-and do great things in the language.
+Os Ruby koans guiam você através do caminho para a iluminação com o próposito de aprender Ruby.
+O objetivo é aprender a linguagem Ruby, a sintaxe, a estrutura e algumas funções e bibliotecas comuns.
+Também lhe ensinaresmos cultura. Testar não é algo que apenas falamos, mas que vivemos.
+É essencial que na sua jornada você aprenda e faça boas coisas na linguagem.
 
-== The Structure
+== A Estrutura
 
-The koans are broken out into areas by file, hashes are covered in about_hashes.rb,
-modules are introduced in about_modules.rb, etc.  They are presented in order in the
-path_to_enlightenment.rb file.
+Os Koans estão divididos em áreas por arquivo, hashes (dicionários) são cobertos em about_hashes.rb,
+módulos são apresentados em about_modules.rb, etc. Eles são apresentados na ordem do arquivo path_to_enlightenment.
 
-Each koan builds up your knowledge of Ruby and builds upon itself.  It will stop at
-the first place you need to correct.
+Cada koan aumenta seu conhecimento de Ruby e depende de si próprio. Ele irá parar no primeiro local que você precisa
+corrigir.
 
-Some koans simply need to have the correct answer substituted for an incorrect one.
-Some, however, require you to supply your own answer.  If you see the method +__+ (a
-double underscore) listed, it is a hint to you to supply your own code in order to
-make it work correctly.
+
+Alguns koans simplesmente precisam que você substitua uma resposta correta por uma incorreta.
+Outros, entretanto, precisam que você dê sua resposta. Se você ver o método +__+(um underscore duplo)
+listado, é uma dica que você deve colocar seu próprio código no lugar dos underscores para fazer o teste
+funcionar corretamente.
 
 == Installing Ruby
 
-If you do not have Ruby setup, please visit http://ruby-lang.org/en/downloads/ for
-operating specific instructions.  In order to run this you need ruby and rake
-installed. To check the installations simply type:
+Se você não tem o Ruby instalado, viste http://ruby-lang.org/en/downloads/ para instruções específicas de operação.
+Para executar os ruby koans você precisa do ruby e do rake instalados.
 
-*nix platforms from any terminal window:
+
+Para checar a instalação digite isso:
+
+plataformas *nix (GNU/Linux, Mac OSX) de qualquer janela de um terminal:
 
    [~] $ ruby --version
    [~] $ rake --version
 
-Windows from the command prompt (cmd.exe)
+Windows do prompt de comando (cmd.exe)
 
    c:\ruby --version
    c:\rake --version
 
-Any response for Ruby with a version number greater than 1.8 is fine (should be
-around 1.8.6 or more). Any version of rake will do.
+Qualquer resposta do Ruby com um número de versão maior que 1.8 está bom (deve ser 1.8.6 ou maior).
+Qualquer versão do Rake servirá.
 
-== The Path To Enlightenment
+== O Caminho para a Iluminação
 
 You can run the tests through rake or by calling the file itself (rake is the
 recommended way to run them as we might build more functionality into this task).

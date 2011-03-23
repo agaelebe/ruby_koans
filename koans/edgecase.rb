@@ -22,7 +22,7 @@ end
 
 # Standard, generic replacement value.
 # If value19 is given, it is used inplace of value for Ruby 1.9.
-def __(value="FILL ME IN", value19=:mu)
+def __(value="PREENCHA-ME", value19=:mu)
   if RUBY_VERSION < "1.9"
     value
   else
@@ -167,13 +167,13 @@ module EdgeCase
       if step.passed?
         @pass_count += 1
         if @pass_count > progress.last.to_i
-          @observations << Color.green("#{step.koan_file}##{step.name} has expanded your awareness.")
+          @observations << Color.green("#{step.koan_file}##{step.name} expandiu seu conhecimento.")
         end
       else
         @failed_test = step
         @failure = step.failure
         add_progress(@pass_count)
-        @observations << Color.red("#{step.koan_file}##{step.name} has damaged your karma.")
+        @observations << Color.red("#{step.koan_file}##{step.name} danificou o seu karma.")
         throw :edgecase_exit
       end
     end
@@ -202,7 +202,7 @@ module EdgeCase
       bar_width = 50
       total_tests = EdgeCase::Koan.total_tests
       scale = bar_width.to_f/total_tests
-      print Color.green("your path thus far [")
+      print Color.green("seu caminho ate entao [")
       happy_steps = (pass_count*scale).to_i
       happy_steps = 1 if happy_steps == 0 && pass_count > 0
       print Color.green('.'*happy_steps)
@@ -224,7 +224,7 @@ module EdgeCase
     end
 
     def boring_end_screen
-      puts "Mountains are again merely mountains"
+      puts "Montanhas sao novamente meras montanhas"
     end
 
     def artistic_end_screen
@@ -242,7 +242,7 @@ module EdgeCase
       ,:     , ,:,,:                                       :::::::::::::
      ::,:   ,,:::,                                           ,::::::::::::,
     ,:::, :,,:::                                               ::::::::::::,
-   ,::: :::::::,       Mountains are again merely mountains     ,::::::::::::
+   ,::: :::::::,    Montanhas são novamente meras montanhas    ,::::::::::::
    :::,,,::::::                                                   ::::::::::::
  ,:::::::::::,                                                    ::::::::::::,
  :::::::::::,                                                     ,::::::::::::
@@ -250,7 +250,7 @@ module EdgeCase
 ::::::::::::                      Ruby Koans                       ::::::::::::,
 ::::::::::::#{                  ruby_version                     },::::::::::::,
 :::::::::::,                                                      , ::::::::::::
-,:::::::::::::,                brought to you by                 ,,::::::::::::,
+,:::::::::::::,                trazidos por você por             ,,::::::::::::,
 ::::::::::::::                                                    ,::::::::::::
  ::::::::::::::,                                                 ,:::::::::::::
  ::::::::::::,             EdgeCase Software Artisans           , ::::::::::::
@@ -271,23 +271,23 @@ ENDTEXT
 
     def encourage
       puts
-      puts "The Master says:"
-      puts Color.cyan("  You have not yet reached enlightenment.")
+      puts "O Mestre diz:"
+      puts Color.cyan("  Voce ainda nao atingiu a iluminacao.")
       if ((recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1)
-        puts Color.cyan("  I sense frustration. Do not be afraid to ask for help.")
+        puts Color.cyan("  Eu sinto a frustracao. Nao tenha medo de pedir por ajuda.")
       elsif progress.last(2).size == 2 && progress.last(2).uniq.size == 1
-        puts Color.cyan("  Do not lose hope.")
+        puts Color.cyan("  Nao perca a esperanca.")
       elsif progress.last.to_i > 0
-        puts Color.cyan("  You are progressing. Excellent. #{progress.last} completed.")
+        puts Color.cyan("  Voce esta progredindo. Excelente. #{progress.last} completados.")
       end
     end
 
     def guide_through_error
       puts
-      puts "The answers you seek..."
+      puts "A resposta que voce busca..."
       puts Color.red(indent(failure.message).join)
       puts
-      puts "Please meditate on the following code:"
+      puts "Por favor, medite sobre o seguinte codigo:"
       if assert_failed?
         puts embolden_first_line_only(indent(find_interesting_lines(failure.backtrace)))
       else
@@ -323,21 +323,21 @@ ENDTEXT
     # metakoans Ruby Quiz (http://rubyquiz.com/quiz67.html)
     def a_zenlike_statement
       if !failed?
-        zen_statement =  "Mountains are again merely mountains"
+        zen_statement =  "Montanhas sao novamente meras montanhas"
       else
         zen_statement = case (@pass_count % 10)
         when 0
-          "mountains are merely mountains"
+          "montanhas sao novamente meras montanhas"
         when 1, 2
-          "learn the rules so you know how to break them properly"
+          "aprenda as regras para que voce saiba como quebra-las corretamente"
         when 3, 4
-          "remember that silence is sometimes the best answer"
+          "lembre-se que o silencio eh as vezes a melhor resposta"
         when 5, 6
-          "sleep is the best meditation"
+          "o sono eh a melhor meditacao"
         when 7, 8
-          "when you lose, don't lose the lesson"
+          "quando perder, nao perca a licao"
         else
-          "things are not what they appear to be: nor are they otherwise"
+          "as coisas nao parecem ser o que aparentam: nem sao o contrario"
         end
       end
       puts Color.green(zen_statement)
@@ -412,7 +412,7 @@ ENDTEXT
             if File.exist?(arg)
               load(arg)
             else
-              fail "Unknown command line argument '#{arg}'"
+              fail "Argumento de linha de comando desconhecido'#{arg}'"
             end
           end
         end

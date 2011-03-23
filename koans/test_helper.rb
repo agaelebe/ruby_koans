@@ -1,7 +1,7 @@
 require 'test/unit'
 
 def __
-  "FILL ME IN"
+  "PREENCHA-ME"
 end
 
 EdgeCase = Test::Unit
